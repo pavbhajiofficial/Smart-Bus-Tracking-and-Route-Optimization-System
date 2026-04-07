@@ -1,166 +1,152 @@
 # Smart-Bus-Tracking-and-Route-Optimization-System
+# Smart Bus Tracking System
 
-## **Project Overview**
-
-The **Smart Bus Tracking System** is a console-based application developed in C that simulates a university shuttle system. It helps students efficiently navigate between campus locations by:
-
-* Finding the **shortest route**
-* Identifying the **nearest bus stop**
-* Displaying **available seats**
-* Estimating **waiting time**
-
-The system models the campus as a **weighted graph**, where each location is a node and distances represent edge weights.
+**Using Dijkstra’s Algorithm, BFS, Greedy Technique, and Priority Queue (C Language)**
 
 ---
 
-## **Objectives**
+## Project Overview
 
-* Design an optimized algorithm for real-world campus transport problems
-* Implement **Dijkstra’s Algorithm** for shortest path
-* Apply **Greedy technique** for nearest node selection
-* Improve student convenience and reduce waiting time
+The Smart Bus Tracking System is a modular, console-based application developed in C to simulate a university shuttle network. The system models campus locations as a weighted graph and provides optimized route planning and bus-related information to students.
 
----
-
-## **Algorithms Used**
-
-### 🔹 Dijkstra’s Algorithm
-
-* Used to find the **shortest path** between two locations
-* Ensures optimal routing in weighted graphs
-
-### 🔹 Greedy Technique
-
-* Used in:
-
-  * Selecting the **nearest bus stop**
-  * Choosing the **minimum distance node** in Dijkstra
+It integrates multiple Data Structures and Algorithms (DSA) concepts such as Dijkstra’s Algorithm (optimized with a priority queue), Breadth-First Search (BFS), greedy techniques, and hash-based lookup to deliver efficient and scalable solutions.
 
 ---
 
-## **Bus Stops (Nodes)**
+## Objectives
 
-* Main Gate
-* Anna Auditorium
-* MGR Block
-* SMV
-* TT
-* PRP
-* SJT
-* MGB
-* Library
+* Design an algorithmic solution for campus transportation optimization
+* Implement shortest path computation using Dijkstra’s Algorithm
+* Provide minimum-stop routing using BFS
+* Enable efficient bus lookup using hash map concepts
+* Simulate real-world features like seat availability and route selection
 
 ---
 
-## ⚙️ **Features**
+## Features
 
-### 1. View Bus Stops
-
-Displays all available shuttle stops with indices.
-
-### 2. Seat Availability
-
-Shows number of empty seats at each stop (simulated data).
-
-### 3. Nearest Bus Stop
-
-Finds the closest stop from the user's location using a **greedy approach**.
-
-### 4. Best Route Finder
-
-Uses **Dijkstra’s Algorithm** to:
-
-* Compute shortest path
-* Display route
-* Show total distance
-
-### 5. Estimated Waiting Time
-
-* Based on seat availability
-* Fewer seats → more crowd → higher waiting time
+* Display all bus stops in the system
+* Show seat availability at each stop
+* Perform bus lookup using hash map logic (bus ID to location and seats)
+* Find the nearest bus stop using a greedy approach
+* Compute shortest route based on distance using optimized Dijkstra’s Algorithm with a priority queue
+* Compute route with minimum number of stops using BFS
 
 ---
 
-## **Project Structure**
+## Algorithms and Data Structures Used
 
-```bash
+### Dijkstra’s Algorithm with Priority Queue
+
+* Computes the shortest path between two nodes
+* Optimized using a min-heap (priority queue)
+* Time Complexity: O(E log V)
+
+### Breadth-First Search (BFS)
+
+* Finds the path with the minimum number of stops
+* Suitable for unweighted or equal-weight scenarios
+* Time Complexity: O(V + E)
+
+### Greedy Technique
+
+* Used to determine the nearest bus stop
+* Selects the locally optimal solution at each step
+
+### Hash Map (Array-based Implementation)
+
+* Maps bus IDs to their current location and available seats
+* Provides constant-time lookup
+
+### Graph Representation
+
+* Implemented using an adjacency matrix
+* Nodes represent bus stops
+* Edge weights represent distances
+
+---
+
+## System Architecture
+
+The system follows a modular design with the following components:
+
+* Graph Module: Stores nodes and adjacency matrix
+* Processing Module: Implements algorithms (Dijkstra, BFS, Greedy, Priority Queue)
+* Bus Module: Manages seat availability and bus lookup
+* Main Module: Handles user interaction and program flow
+
+---
+
+## Project Structure
+
+```
 smart_bus_system/
 │
-├── main.c          # Entry point (menu-driven system)
-├── graph.c         # Graph and node definitions
+├── main.c          # Entry point and menu-driven interface
+├── graph.c         # Graph data (nodes and adjacency matrix)
 ├── graph.h
-├── dijkstra.c      # Shortest path + greedy logic
-├── dijkstra.h
-├── bus.c           # Seat & waiting time logic
+├── processing.c    # Dijkstra (with heap), BFS, greedy logic
+├── processing.h
+├── bus.c           # Seat availability and bus lookup (hash map)
 ├── bus.h
 ```
 
 ---
 
-## **Workflow**
+## How to Compile and Run
 
-1. User selects feature from menu
-2. Inputs source/destination (if required)
-3. System processes data using algorithms
-4. Output is displayed in console
+Use a C compiler such as GCC.
 
----
-
-## **Technologies Used**
-
-* Programming Language: **C**
-* Compiler: GCC / CodeBlocks / VS Code
-* Data Structures:
-
-  * Graph (Adjacency Matrix)
-  * Arrays
-
----
-
-## **How to Compile & Run**
-
-```bash
-gcc main.c graph.c dijkstra.c bus.c -o smartbus
+```
+gcc main.c graph.c processing.c bus.c -o smartbus
 ./smartbus
 ```
 
 ---
 
-## **Time Complexity**
+## Input and Output
 
-| Operation             | Complexity |
-| --------------------- | ---------- |
-| Dijkstra Algorithm    | O(V²)      |
-| Nearest Node (Greedy) | O(V)       |
+* Input: User selects operations and provides source/destination nodes
+* Output:
 
----
-
-## **Limitations**
-
-* No graphical user interface (CLI-based)
-* Uses simulated data (no real-time GPS)
-* Static seat availability
+  * List of stops
+  * Seat availability
+  * Bus lookup details
+  * Nearest stop
+  * Shortest path (distance-based)
+  * Minimum stops path
 
 ---
 
-## **Future Enhancements**
+## Time Complexity Summary
 
-* Real-time GPS integration
-* Mobile app (Android/iOS)
-* Live bus tracking using IoT
-* AI-based prediction of bus arrival
-* Cloud database for real-time updates
-
----
-
-## **Conclusion**
-
-This project demonstrates how **algorithmic techniques like Dijkstra and Greedy** can be applied to solve real-world transportation problems efficiently. It provides a scalable foundation for building smart campus mobility solutions.
+| Operation                      | Complexity |
+| ------------------------------ | ---------- |
+| Dijkstra (with priority queue) | O(E log V) |
+| BFS                            | O(V + E)   |
+| Greedy nearest node            | O(V)       |
+| Hash map lookup                | O(1)       |
 
 ---
 
-## **References**
+## Limitations
 
-* Introduction to Algorithms – Thomas H. Cormen
-* Data Structures using C – Reema Thareja
-* GeeksforGeeks – Dijkstra Algorithm
+* Console-based interface (no graphical UI)
+* Static data (no real-time GPS or live updates)
+* Limited scalability due to adjacency matrix representation
+
+---
+
+## Future Enhancements
+
+* Integration with real-time GPS tracking
+* Mobile or web-based user interface
+* Dynamic graph updates based on traffic conditions
+* Database integration for live seat tracking
+* Advanced route optimization using AI or machine learning
+
+---
+
+## Conclusion
+
+This project demonstrates the practical application of multiple data structures and algorithms in solving a real-world transportation problem. By combining graph algorithms, greedy strategies, priority queues, BFS, and hash-based lookup, the system provides an efficient and scalable approach to smart campus mobility.
