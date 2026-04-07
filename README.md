@@ -1,6 +1,6 @@
 # Smart-Bus-Tracking-and-Route-Optimization-System
 
-## 📌 **Project Overview**
+## **Project Overview**
 
 The **Smart Bus Tracking System** is a console-based application developed in C that simulates a university shuttle system. It helps students efficiently navigate between campus locations by:
 
@@ -13,7 +13,7 @@ The system models the campus as a **weighted graph**, where each location is a n
 
 ---
 
-## 🎯 **Objectives**
+## **Objectives**
 
 * Design an optimized algorithm for real-world campus transport problems
 * Implement **Dijkstra’s Algorithm** for shortest path
@@ -22,7 +22,7 @@ The system models the campus as a **weighted graph**, where each location is a n
 
 ---
 
-## 🧠 **Algorithms Used**
+## **Algorithms Used**
 
 ### 🔹 Dijkstra’s Algorithm
 
@@ -38,7 +38,7 @@ The system models the campus as a **weighted graph**, where each location is a n
 
 ---
 
-## 🗺️ **Bus Stops (Nodes)**
+## **Bus Stops (Nodes)**
 
 * Main Gate
 * Anna Auditorium
@@ -54,19 +54,19 @@ The system models the campus as a **weighted graph**, where each location is a n
 
 ## ⚙️ **Features**
 
-### ✅ 1. View Bus Stops
+### 1. View Bus Stops
 
 Displays all available shuttle stops with indices.
 
-### ✅ 2. Seat Availability
+### 2. Seat Availability
 
 Shows number of empty seats at each stop (simulated data).
 
-### ✅ 3. Nearest Bus Stop
+### 3. Nearest Bus Stop
 
 Finds the closest stop from the user's location using a **greedy approach**.
 
-### ✅ 4. Best Route Finder
+### 4. Best Route Finder
 
 Uses **Dijkstra’s Algorithm** to:
 
@@ -74,14 +74,14 @@ Uses **Dijkstra’s Algorithm** to:
 * Display route
 * Show total distance
 
-### ✅ 5. Estimated Waiting Time
+### 5. Estimated Waiting Time
 
 * Based on seat availability
 * Fewer seats → more crowd → higher waiting time
 
 ---
 
-## 🏗️ **Project Structure**
+## **Project Structure**
 
 ```bash
 smart_bus_system/
@@ -97,7 +97,7 @@ smart_bus_system/
 
 ---
 
-## 🔄 **Workflow**
+## **Workflow**
 
 1. User selects feature from menu
 2. Inputs source/destination (if required)
@@ -106,7 +106,7 @@ smart_bus_system/
 
 ---
 
-## 💻 **Technologies Used**
+## **Technologies Used**
 
 * Programming Language: **C**
 * Compiler: GCC / CodeBlocks / VS Code
@@ -117,7 +117,7 @@ smart_bus_system/
 
 ---
 
-## ▶️ **How to Compile & Run**
+## **How to Compile & Run**
 
 ```bash
 gcc main.c graph.c dijkstra.c bus.c -o smartbus
@@ -126,7 +126,7 @@ gcc main.c graph.c dijkstra.c bus.c -o smartbus
 
 ---
 
-## 📊 **Time Complexity**
+## **Time Complexity**
 
 | Operation             | Complexity |
 | --------------------- | ---------- |
@@ -135,7 +135,7 @@ gcc main.c graph.c dijkstra.c bus.c -o smartbus
 
 ---
 
-## ⚠️ **Limitations**
+## **Limitations**
 
 * No graphical user interface (CLI-based)
 * Uses simulated data (no real-time GPS)
@@ -143,7 +143,7 @@ gcc main.c graph.c dijkstra.c bus.c -o smartbus
 
 ---
 
-## 🚀 **Future Enhancements**
+## **Future Enhancements**
 
 * Real-time GPS integration
 * Mobile app (Android/iOS)
@@ -153,13 +153,13 @@ gcc main.c graph.c dijkstra.c bus.c -o smartbus
 
 ---
 
-## 📌 **Conclusion**
+## **Conclusion**
 
 This project demonstrates how **algorithmic techniques like Dijkstra and Greedy** can be applied to solve real-world transportation problems efficiently. It provides a scalable foundation for building smart campus mobility solutions.
 
 ---
 
-## 📚 **References**
+## **References**
 
 * Introduction to Algorithms – Thomas H. Cormen
 * Data Structures using C – Reema Thareja
