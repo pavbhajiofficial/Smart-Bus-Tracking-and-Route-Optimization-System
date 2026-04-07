@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include "graph.h"
-#include "dijkstra.h"
+#include "processing.h"
 #include "bus.h"
 
 int main() {
     int choice, src, dest;
 
     while (1) {
-        printf("\n===== SMART BUS TRACKING SYSTEM =====\n");
-        printf("1. Show Bus Stops\n");
-        printf("2. Show Seat Availability\n");
-        printf("3. Find Nearest Stop\n");
-        printf("4. Find Best Route\n");
-        printf("5. Show Waiting Time\n");
-        printf("6. Exit\n");
+        printf("\n===== SMART BUS SYSTEM =====\n");
+        printf("1. Show Stops\n");
+        printf("2. Seat Availability\n");
+        printf("3. Bus Lookup (Hash Map)\n");
+        printf("4. Nearest Stop\n");
+        printf("5. Shortest Route (Dijkstra + Heap)\n");
+        printf("6. Minimum Stops (BFS)\n");
+        printf("7. Exit\n");
 
         printf("Enter choice: ");
         scanf("%d", &choice);
@@ -29,28 +30,32 @@ int main() {
             break;
 
         case 3:
-            printf("Enter your location index: ");
+            displayBusLookup();
+            break;
+
+        case 4:
+            printf("Enter source: ");
             scanf("%d", &src);
             findNearest(src);
             break;
 
-        case 4:
-            printf("Enter Source: ");
-            scanf("%d", &src);
-            printf("Enter Destination: ");
-            scanf("%d", &dest);
+        case 5:
+            printf("Enter source and destination: ");
+            scanf("%d %d", &src, &dest);
             dijkstra(src, dest);
             break;
 
-        case 5:
-            waitingTime();
+        case 6:
+            printf("Enter source and destination: ");
+            scanf("%d %d", &src, &dest);
+            bfsShortestStops(src, dest);
             break;
 
-        case 6:
+        case 7:
             return 0;
 
         default:
-            printf("Invalid choice!\n");
+            printf("Invalid choice\n");
         }
     }
 }
