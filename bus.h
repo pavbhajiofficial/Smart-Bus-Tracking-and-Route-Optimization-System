@@ -2,6 +2,6 @@
 #define BUS_H
 
 void displaySeats();
-void waitingTime();
+void displayBusLookup();
 
 #endif
